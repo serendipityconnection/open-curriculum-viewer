@@ -1,0 +1,45 @@
+Open Curriculum Viewer
+Copyright 2026 Serendipity Connection (https://www.serendipityconnection.org)
+
+This software was founded and originally developed by Serendipity Connection.
+
+---
+
+ATTRIBUTION REQUIREMENT
+
+This software is licensed under the MIT License (see LICENSE). As a condition
+of use, the following attribution must be preserved in all copies, forks,
+distributions, and deployments of this software -- including hosted versions,
+modified versions, and any product or service built on top of this codebase:
+
+  1. This NOTICE file must be retained in its entirety in all source
+     distributions.
+
+  2. The attribution footer visible in the application UI (in
+     src/app/layout.tsx) must be preserved and remain visible to end users.
+     The footer text reads:
+
+       "Open Curriculum Viewer -- founded by Serendipity Connection
+        (serendipityconnection.org)"
+
+     You may add your own name or organization alongside this attribution,
+     but you may not remove or obscure it.
+
+  3. Any public fork or derivative of this software hosted on a public
+     repository must include a reference to the original project at:
+     https://github.com/serendipityconnection/open-curriculum-viewer
+
+Failure to preserve this attribution is a violation of the license terms.
+
+---
+
+CURRICULUM CONTENT
+
+Curriculum content in the programs/ directory is separately licensed under
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+See https://creativecommons.org/licenses/by-sa/4.0/ for the full license text.
+
+CC BY-SA 4.0 requires that:
+  - Attribution is given to Serendipity Connection as the original author.
+  - Any adaptations are shared under the same CC BY-SA 4.0 license.
+  - The original source is linked where technically reasonable.

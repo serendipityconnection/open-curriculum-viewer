@@ -1,0 +1,42 @@
+{
+  "name": "learning-platform-poc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0",
+    "bcryptjs": "^2.4.3",
+    "drizzle-orm": "^0.31.0",
+    "gray-matter": "^4.0.3",
+    "inngest": "^3.19.0",
+    "js-yaml": "^4.1.0",
+    "next": "14.2.3",
+    "next-auth": "^5.0.0-beta.25",
+    "openai": "^4.47.0",
+    "postgres": "^3.4.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "stripe": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "drizzle-kit": "^0.22.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.22.0",
+    "typescript": "^5"
+  }
+}

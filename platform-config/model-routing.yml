@@ -1,0 +1,56 @@
+# Model Gateway — Routing Configuration
+# Format: provider/model-name
+# Local provider uses Ollama (OpenAI-compatible API at OLLAMA_ENDPOINT).
+# Switch between cloud and local via USE_LOCAL_MODELS=true in .env.local.
+
+routing:
+  avatar_session:
+    primary: anthropic/claude-opus-4-7        # best persona fidelity for interactive sessions
+    local: ollama/gemma3:27b                  # best local option; fits in 16GB VRAM (Q4)
+    local_fallback: ollama/mistral-nemo:12b   # lighter fallback if gemma3:27b is slow
+    fallback: anthropic/claude-sonnet-4-6     # cloud fallback on primary timeout
+    max_tokens: 1024
+    temperature: 0.7
+
+  artifact_grading:
+    primary: anthropic/claude-sonnet-4-6
+    local: ollama/qwen2.5:14b                 # strong instruction following for rubric eval
+    local_fallback: ollama/mistral-nemo:12b
+    fallback: anthropic/claude-haiku-4-5-20251001
+    max_tokens: 2048
+    temperature: 0.2                          # low temp for consistent rubric output
+
+  session_summary:
+    primary: anthropic/claude-haiku-4-5-20251001
+    local: ollama/qwen2.5:14b
+    local_fallback: ollama/llama3.1:8b
+    fallback: anthropic/claude-sonnet-4-6
+    max_tokens: 512
+    temperature: 0.3
+
+  feedback_analysis:
+    primary: anthropic/claude-sonnet-4-6
+    local: ollama/gemma3:27b
+    local_fallback: ollama/qwen2.5:14b
+    fallback: anthropic/claude-haiku-4-5-20251001
+    max_tokens: 4096
+    temperature: 0.4
+
+tts:
+  default_provider: openai                    # openai | kokoro | elevenlabs
+  local_provider: kokoro                      # used when USE_LOCAL_MODELS=true
+  fallback_provider: openai                   # all avatars have openai voice assigned
+
+providers:
+  anthropic:
+    timeout_ms: 30000
+  openai:
+    timeout_ms: 10000
+  ollama:
+    endpoint_env: OLLAMA_ENDPOINT             # default: http://localhost:11434/v1
+    timeout_ms: 60000                         # local inference can be slower
+  kokoro:
+    endpoint_env: KOKORO_ENDPOINT             # default: http://localhost:8880
+    timeout_ms: 10000
+  elevenlabs:
+    timeout_ms: 10000

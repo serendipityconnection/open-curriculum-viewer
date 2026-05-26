@@ -1,0 +1,22 @@
+# delivery-config.yml — instructor variable substitution
+#
+# Copy this file to the root of your curriculum folder (e.g., programs/ai-project-manager/)
+# and rename it to delivery-config.yml.
+#
+# Variables defined here replace {{placeholders}} in lesson content at render time.
+# The file is optional -- default values are used when it is absent.
+#
+# ── Instructor identity ────────────────────────────────────────────────────────
+instructor_name: "Joe Instructor"       # Replaces {{instructor_name}} in lessons
+instructor_title: "Instructor"          # e.g., "Senior Instructor", "Lead Facilitator"
+instructor_email: ""                    # Optional -- shown in resources sections if present
+
+# ── Program context ────────────────────────────────────────────────────────────
+modules_covered: "this program"         # Replaces {{modules_covered}} -- e.g., "Modules A through D"
+cohort_name: ""                         # Optional -- e.g., "Spring 2026 Cohort"
+organization_name: ""                   # Optional -- e.g., "Acme Corp"
+
+# ── Schedule (optional) ───────────────────────────────────────────────────────
+# Used in lessons that reference session dates or deadlines.
+# session_start_date: "2026-09-01"
+# session_end_date: "2026-12-15"
